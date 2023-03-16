@@ -23,7 +23,6 @@ To run the app on your local machine, you will need to have Node.js and the Expo
 
 -   React Native
 -   Expo
--   Redux
 -   React Navigation
 -   Async Storage
 
