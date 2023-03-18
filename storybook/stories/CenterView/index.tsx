@@ -1,20 +1,13 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { View } from "react-native";
-import style from "./style";
+import React from 'react'
+import { View } from 'react-native'
+import style from './style'
 
-type CenterViewTypes = {
-  children: React.ReactNode;
-};
-
-export default function CenterView({ children }: CenterViewTypes) {
-  return <View style={style.main}>{children}</View>;
+interface CenterViewTypes {
+	children: React.ReactNode
 }
 
-CenterView.defaultProps = {
-  children: null,
-};
+const CenterView = ({ children }: CenterViewTypes): React.ReactElement => {
+	return <View style={style.main}>{children}</View>
+}
 
-CenterView.propTypes = {
-  children: PropTypes.node,
-};
+export default CenterView
