@@ -14,10 +14,9 @@ Features
 To run the app on your local machine, you will need to have Node.js and the Expo CLI installed. Follow the instructions below to get started:
 
 1.  Clone the repository or download the source code.
-2.  Navigate to the project directory and install the required dependencies using `npm install`.
-3.  Start the app by running `npm start`.
-4.  Use the Expo app on your mobile device to scan the QR code displayed in the terminal or the Expo Dev Tools.
-5.  The app should launch on your mobile device.
+2.  Navigate to the project directory and install the required dependencies using `yarn install`.
+3.  Start the app by running `yarn {platform}`. Platforms being `ios` and `android`
+4.  The app should launch on your mobile developer device or emulator.
 
 ## Technologies Used
 

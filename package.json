@@ -6,7 +6,6 @@
 		"start": "expo start",
 		"android": "expo start --android",
 		"ios": "expo start --ios",
-		"web": "expo start --web",
 		"storybook": "STORYBOOK_ENABLED='true' expo start",
 		"lint": "yarn run eslint --ext .tsx --ext .ts ./",
 		"build-storybook": "build-storybook",
