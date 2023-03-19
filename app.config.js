@@ -1,29 +1,34 @@
 module.exports = {
-	name: "meditation-app",
-	slug: "meditation-app",
-	version: "1.0.0",
-	orientation: "portrait",
-	icon: "./assets/icon.png",
-	userInterfaceStyle: "light",
+	name: 'meditation-app',
+	slug: 'meditation-app',
+	version: '1.0.0',
+	orientation: 'portrait',
+	icon: './assets/icon.png',
+	userInterfaceStyle: 'light',
 	splash: {
-		image: "./assets/splash.png",
-		resizeMode: "contain",
-		backgroundColor: "#ffffff"
+		image: './assets/splash.png',
+		resizeMode: 'contain',
+		backgroundColor: '#ffffff'
 	},
 	extra: {
-		storybookEnabled: process.env.STORYBOOK_ENABLED
+		storybookEnabled: process.env.STORYBOOK_ENABLED,
+		eas: {
+			projectId: '2f64b51c-1f1a-4152-b7b1-ec376f2690d3'
+		}
 	},
-	assetBundlePatterns: ["**/*"],
+	assetBundlePatterns: ['**/*'],
 	ios: {
-		supportsTablet: true
+		supportsTablet: true,
+		bundleIdentifier: 'com.wethefutr.meditationApp'
 	},
 	android: {
+		package: 'com.wethefutr.meditationApp',
 		adaptiveIcon: {
-			foregroundImage: "./assets/adaptive-icon.png",
-			backgroundColor: "#ffffff"
+			foregroundImage: './assets/adaptive-icon.png',
+			backgroundColor: '#ffffff'
 		}
 	},
 	web: {
-		favicon: "./assets/favicon.png"
+		favicon: './assets/favicon.png'
 	}
 }

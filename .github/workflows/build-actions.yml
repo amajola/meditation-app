@@ -1,10 +1,9 @@
-name: lint-actions
-run-name: ${{ github.actor }} is running linting
+name: build-actions
+run-name: ${{ github.actor }} is building main
 on: [push]
 jobs:
-  run-code-checks:
+  update:
     runs-on: ubuntu-latest
-
     steps:
       - name: 🏗 Setup repo
         uses: actions/checkout@v3
@@ -15,10 +14,14 @@ jobs:
           node-version: 16.x
           cache: yarn
 
+      - name: 🏗 Setup EAS
+        uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+
       - name: 📦 Install dependencies
         run: yarn install
 
-
-      - run: yarn lint
-
-      - run: yarn test
+    - name: Build on EAS
+        run: eas build --platform android --non-interactive
