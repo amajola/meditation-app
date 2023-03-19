@@ -2,12 +2,17 @@ name: lint-actions
 run-name: ${{ github.actor }} is running linting
 on: [push]
 jobs:
-  check-bats-versions:
+  lint:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
             node-version: '16'
-      - run: npm install -g bats
-      - run: bats -v
+      - name: Run install
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: install # will run `yarn install` command
+      - run: lint
+      - run: test
