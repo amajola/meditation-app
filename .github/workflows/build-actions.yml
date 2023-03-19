@@ -1,6 +1,9 @@
 name: build-actions
 run-name: ${{ github.actor }} is building main
-on: [push]
+on:
+  pull_request:
+    branches:
+      - main
 jobs:
   run-build:
     runs-on: ubuntu-latest
@@ -24,5 +27,5 @@ jobs:
       - name: 📦 Install dependencies
         run: yarn install
 
-      - name: Build on EAS
+      - name: 🛠️ Build on EAS
         run: eas build --platform android --non-interactive
