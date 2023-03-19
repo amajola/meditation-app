@@ -14,13 +14,13 @@ jobs:
 
       - name: 🏗 Setup Node
         uses: actions/setup-node@v3
-        with:
-          node-version: 16.x
-          cache: yarn
+          with:
+            node-version: 16.x
+            cache: yarn
 
       - name: 📦 Install dependencies
         run: yarn install
-        
+
       - name: 🧽 Running Linting
         - run: yarn lint
 
