@@ -1,5 +1,4 @@
 name: build-actions
-run-name: ${{ github.actor }} is building main
 on:
   pull_request:
     branches:
@@ -7,6 +6,7 @@ on:
 jobs:
   run-build:
     runs-on: ubuntu-latest
+    name: Build on EAS
 
     steps:
       - name: 🏗 Setup repo
@@ -14,15 +14,15 @@ jobs:
 
       - name: 🏗 Setup Node
         uses: actions/setup-node@v3
-          with:
-            node-version: 16.x
-            cache: yarn
+        with:
+          node-version: 16.x
+          cache: yarn
 
       - name: 🏗 Setup EAS
         uses: expo/expo-github-action@v8
-          with:
-            eas-version: latest
-            token: ${{ secrets.EXPO_TOKEN }}
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
 
       - name: 📦 Install dependencies
         run: yarn install

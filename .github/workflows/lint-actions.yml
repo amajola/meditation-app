@@ -1,5 +1,4 @@
 name: lint-actions
-run-name: ${{ github.actor }} is running linting
 on:
   pull_request:
     branches:
@@ -7,6 +6,7 @@ on:
 jobs:
   run-code-checks:
     runs-on: ubuntu-latest
+    name: Lint and Test
 
     steps:
       - name: 🏗 Setup repo
@@ -14,15 +14,15 @@ jobs:
 
       - name: 🏗 Setup Node
         uses: actions/setup-node@v3
-          with:
-            node-version: 16.x
-            cache: yarn
+        with:
+          node-version: 16.x
+          cache: yarn
 
       - name: 📦 Install dependencies
         run: yarn install
 
       - name: 🧽 Running Linting
-        - run: yarn lint
+        run: yarn lint
 
       - name: 🧪 Running Tests
-        - run: yarn test
+        run: yarn test
