@@ -2,9 +2,9 @@ name: build-actions
 run-name: ${{ github.actor }} is building main
 on: [push]
 jobs:
-  build:
+  run-build:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: 🏗 Setup repo
         uses: actions/checkout@v3
