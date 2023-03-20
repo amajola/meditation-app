@@ -1,7 +1,7 @@
 name: development-update
 run-name: Deploy to Development by @${{ github.actor }}
 on:
-  pull_request:
+  push:
     branches:
       - dev
 jobs:
