@@ -10,6 +10,13 @@ module.exports = {
 		resizeMode: 'contain',
 		backgroundColor: '#ffffff'
 	},
+
+	updates: {
+		url: 'https://u.expo.dev/2f64b51c-1f1a-4152-b7b1-ec376f2690d3'
+	},
+	runtimeVersion: {
+		policy: 'sdkVersion'
+	},
 	extra: {
 		storybookEnabled: process.env.STORYBOOK_ENABLED,
 		eas: {

@@ -1,8 +1,11 @@
 name: lint-actions
+run-name: Update to Production by @${{ github.actor }}
 on:
   pull_request:
     branches:
-      - main
+      - master
+      - staging
+      - dev
 jobs:
   run-code-checks:
     runs-on: ubuntu-latest
