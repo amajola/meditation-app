@@ -28,8 +28,5 @@ jobs:
       - name: 📦 Install dependencies
         run: yarn install
 
-      - name: 🛠️ Build on EAS
-        run: eas build --platform android --non-interactive
-
       - name: 🏋🏽 Push Update
-        run: eas update --branch development --message ${{ github.event.head_commit }}
+        run: eas update --branch preview --message ${{ github.event.head_commit }}
