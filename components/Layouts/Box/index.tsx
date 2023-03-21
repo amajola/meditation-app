@@ -26,12 +26,7 @@ export const baseBoxStyles = StyleSheet.create({
 const Box = ({ styles }: BoxTypes): React.ReactElement => {
 	return (
 		<NativeView style={[styles, baseBoxStyles.container]}>
-			<Text>Asimthande Majola</Text>
-			<Text>Asimthande Majola</Text>
-			<Text>Asimthande Majola</Text>
-			<Text>Asimthande Majola</Text>
-			<Text>Asimthande Majola</Text>
-			<Text>Asimthande Majola</Text>
+			<Text>Labore ex fugiat in dolore tempor elit ex ad.</Text>
 		</NativeView>
 	)
 }
