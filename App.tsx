@@ -2,23 +2,21 @@ import React from 'react'
 import { StatusBar } from 'expo-status-bar'
 import { StyleSheet, Text, View } from 'react-native'
 import Constants from 'expo-constants'
-import StorybookUIRoot from './storybook'
+import { StorybookUIRoot } from './storybook/index.tsx'
 
+// Todo fix the `Unhandled promise rejection [RangeError: Maximum call stack size exceeded (native stack depth)]`
+// on the Storybook UI
 const App = (): React.ReactElement => {
-	return (
-		<View style={styles.container}>
-			<Text>Open up App.tsx to start working on your app!</Text>
-			<StatusBar />
-		</View>
-	)
-}
-
-const AppEntryPointApp = App
-let AppEntryPointStorybook
-
-const apiUrl = Constants.expoConfig?.extra?.storybookEnabled
-if (apiUrl === 'true') {
-	AppEntryPointStorybook = StorybookUIRoot
+	if (Constants.expoConfig?.extra?.storybookEnabled as boolean) {
+		return <StorybookUIRoot />
+	} else {
+		return (
+			<View style={styles.container}>
+				<Text>Open up App.tsx to start working on your app!</Text>
+				<StatusBar />
+			</View>
+		)
+	}
 }
 
 const styles = StyleSheet.create({
@@ -30,4 +28,4 @@ const styles = StyleSheet.create({
 	}
 })
 
-export default AppEntryPointStorybook ?? AppEntryPointApp
+export default App
